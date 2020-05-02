@@ -1,8 +1,19 @@
 <resources>
     <string name="app_name">CalorieCalculator</string>
-    <string-array name="sex">
-        <item>Man</item>
-        <item>Woman</item>
+    <string name="sex_title">Gender:</string>
+    <string name="activity_title">Activity:</string>
+    <string-array name="sex_array">
+        <item>Male</item>
+        <item>Female</item>
     </string-array>
+    <string-array name="activity_array">
+        <item>Sedetary: no excercise</item>
+        <item>Light: exercise 2-3 times/week</item>
+        <item>Moderate: exercise 4-5 times/week</item>
+        <item>Active: daily excercise or intense excersice 3-4 times/week</item>
+        <item>Very active: intense excersice 6-7 times/week</item>
+        <item>Extra active: very intesne excercise daily or physical job</item>
+    </string-array>
+
 
 </resources>

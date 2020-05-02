@@ -17,7 +17,15 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         val sexSpinner: Spinner
-        sexSpinner = findViewById<Spinner>(R.id.sexspinner);
+        sexSpinner = findViewById<Spinner>(R.id.sex_spinner)
+        sexSpinner.prompt
+
+        val activitySpinner: Spinner
+        activitySpinner = findViewById(R.id.activity_spinner)
+
+        var option_sex: String
+        var option_activity: String
+
 
         var heightEditText: EditText
         heightEditText = findViewById(R.id.height_edit_text)
@@ -29,11 +37,10 @@ class MainActivity : AppCompatActivity() {
         ageEditText = findViewById(R.id.age_edit_text)
 
 
-        var option: String
-        val options = arrayOf("Man", "Woman")
+        ArrayAdapter.createFromResource(this, R.array.sex_array, android.R.layout.simple_spinner_item)
+            .also { adapter -> adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
+            sexSpinner.adapter = adapter}
 
-
-        sexSpinner.adapter = ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, options)
         sexSpinner.onItemSelectedListener = object : OnItemSelectedListener{
 
             override fun onNothingSelected(parent: AdapterView<*>?) {
@@ -41,9 +48,30 @@ class MainActivity : AppCompatActivity() {
             }
 
             override fun onItemSelected(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
-                option = options.get(position)
+                if (parent != null) {
+                    option_sex = parent.getItemAtPosition(position) as String
+                }
+            }
+        }
+
+        ArrayAdapter.createFromResource(this, R.array.activity_array, android.R.layout.simple_spinner_item)
+            .also { adapter -> adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
+                activitySpinner.adapter = adapter}
+
+        activitySpinner.onItemSelectedListener = object : OnItemSelectedListener{
+
+            override fun onNothingSelected(parent: AdapterView<*>?) {
+                TODO("Not yet implemented")
             }
 
+            override fun onItemSelected(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
+                if (parent != null) {
+                    option_activity = parent.getItemAtPosition(position) as String
+
+                }
+            }
         }
+
+
     }
 }
