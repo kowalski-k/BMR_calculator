@@ -1,15 +1,15 @@
 package com.example.caloriecalculator
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
-import android.widget.AdapterView
+import android.widget.*
 import android.widget.AdapterView.OnItemSelectedListener
-import android.widget.ArrayAdapter
-import android.widget.EditText
-import android.widget.Spinner
 
 class MainActivity : AppCompatActivity() {
+
+    private lateinit var calculateButton: Button
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -35,6 +35,12 @@ class MainActivity : AppCompatActivity() {
 
         var ageEditText: EditText
         ageEditText = findViewById(R.id.age_edit_text)
+
+        calculateButton = findViewById(R.id.calculate_button)
+        calculateButton.setOnClickListener {
+            val intent = Intent(this, Main2Activity::class.java)
+            startActivity(intent)
+        }
 
 
         ArrayAdapter.createFromResource(this, R.array.sex_array, android.R.layout.simple_spinner_item)
