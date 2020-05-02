@@ -6,6 +6,7 @@ import android.view.View
 import android.widget.AdapterView
 import android.widget.AdapterView.OnItemSelectedListener
 import android.widget.ArrayAdapter
+import android.widget.EditText
 import android.widget.Spinner
 
 class MainActivity : AppCompatActivity() {
@@ -17,6 +18,16 @@ class MainActivity : AppCompatActivity() {
 
         val sexSpinner: Spinner
         sexSpinner = findViewById<Spinner>(R.id.sexspinner);
+
+        var heightEditText: EditText
+        heightEditText = findViewById(R.id.height_edit_text)
+
+        var weightEditTextView: EditText
+        weightEditTextView = findViewById(R.id.weight_edit_text)
+
+        var ageEditText: EditText
+        ageEditText = findViewById(R.id.age_edit_text)
+
 
         var option: String
         val options = arrayOf("Man", "Woman")
