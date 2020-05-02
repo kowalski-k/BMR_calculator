@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">CalorieCalculator</string>
+    <string-array name="sex">
+        <item>Man</item>
+        <item>Woman</item>
+    </string-array>
+
+</resources>
