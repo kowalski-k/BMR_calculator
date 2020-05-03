@@ -7,26 +7,28 @@ import android.view.View
 import android.widget.*
 import android.widget.AdapterView.OnItemSelectedListener
 
-abstract class MainActivity : AppCompatActivity() {
+class MainActivity : AppCompatActivity() {
 
     private lateinit var calculateButton: Button
-    private lateinit var sexSpinner: Spinner
-    private lateinit var   activitySpinner: Spinner
     private lateinit var option_sex: String
     private lateinit var option_activity: String
     private lateinit var heightEditText: EditText
     private lateinit var weightEditTextView: EditText
-    private lateinit  var ageEditText: EditText
+    private lateinit var ageEditText: EditText
+
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-
+        val sexSpinner: Spinner
         sexSpinner = findViewById<Spinner>(R.id.sex_spinner)
+        sexSpinner.prompt
 
+        val activitySpinner: Spinner
         activitySpinner = findViewById(R.id.activity_spinner)
+
 
         heightEditText = findViewById(R.id.height_edit_text)
 
@@ -75,8 +77,7 @@ abstract class MainActivity : AppCompatActivity() {
                 }
             }
         }
+        
 
-    print(option_sex)
     }
-
 }
