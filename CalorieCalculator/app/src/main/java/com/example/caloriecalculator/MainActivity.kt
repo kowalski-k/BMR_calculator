@@ -79,7 +79,7 @@ class MainActivity : AppCompatActivity() {
         }
 
         fun calculateBMR(): Double {
-            if(option_gender == "Man"){
+            if(option_gender == "Male"){
                 BMR = 66 + (13.7 * weightEditTextView.text.toString().toDouble()) + (5 * heightEditText.text.toString().toDouble()) - (6.76 * ageEditText.text.toString().toDouble())
             }
             else{

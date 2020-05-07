@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="#fffffe"
+    android:background="#f8f5f2"
     tools:context=".MainActivity">
 
     <TextView
@@ -33,6 +33,7 @@
         android:layout_margin="5dp"
         android:ems="10"
         android:hint="Enter yout height in cm"
+        android:textSize="16dp"
         android:inputType="number" />
 
     <EditText
@@ -42,6 +43,7 @@
         android:layout_margin="5dp"
         android:ems="10"
         android:hint="Enter your weight in kg"
+        android:textSize="16dp"
         android:inputType="number" />
 
     <EditText
@@ -51,6 +53,7 @@
         android:layout_margin="5dp"
         android:ems="10"
         android:hint="Enter your age"
+        android:textSize="16dp"
         android:inputType="number" />
 
     <TextView
@@ -81,9 +84,9 @@
         android:layout_marginTop="30dp"
         android:layout_marginRight="16dp"
         android:layout_marginBottom="5dp"
-        android:background="#ffd803"
+        android:background="#3D58B8"
         android:text="Calculate"
         android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-        android:textColor="#272343" />
+        android:textColor="#f8f5f2" />
 
 </LinearLayout>
