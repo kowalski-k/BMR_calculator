@@ -1,11 +1,11 @@
 package com.example.caloriecalculator
 
-import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.widget.*
 import android.widget.AdapterView.OnItemSelectedListener
+import androidx.appcompat.app.AppCompatActivity
+
 
 class MainActivity : AppCompatActivity() {
 
@@ -40,10 +40,7 @@ class MainActivity : AppCompatActivity() {
         ageEditText = findViewById(R.id.age_edit_text)
 
         calculateButton = findViewById(R.id.calculate_button)
-        calculateButton.setOnClickListener {
-            val intent = Intent(this, Main2Activity::class.java)
-            startActivity(intent)
-        }
+
 
 
         ArrayAdapter.createFromResource(this, R.array.gender_array, android.R.layout.simple_spinner_item)
@@ -111,7 +108,14 @@ class MainActivity : AppCompatActivity() {
             }
             return CPM
         }
-        
+
+        fun result() {
+            calculateBMR()
+            calculateCPM()
+            Toast.makeText(this, String.format(getResources().getString(R.string.resultCMP), CPM), Toast.LENGTH_LONG).show()
+        }
+        calculateButton.setOnClickListener { result() }
+        }
 
     }
-}
+

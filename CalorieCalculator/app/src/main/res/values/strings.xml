@@ -2,6 +2,8 @@
     <string name="app_name">CalorieCalculator</string>
     <string name="sex_title">Gender:</string>
     <string name="activity_title">Activity:</string>
+    <string name="resultBMR">Your BMR is: </string>
+    <string name="resultCMP">Your CMP is: %d kcal</string>
     <string-array name="gender_array">
         <item>Male</item>
         <item>Female</item>
@@ -14,6 +16,7 @@
         <item>Very active: intense exercise 6-7 times/week</item>
         <item>Extra active: very intense exercise daily or physical job</item>
     </string-array>
+
 
 
 </resources>
