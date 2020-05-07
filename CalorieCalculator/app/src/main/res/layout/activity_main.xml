@@ -16,7 +16,7 @@
         android:textSize="16dp"></TextView>
 
     <Spinner
-        android:id="@+id/sex_spinner"
+        android:id="@+id/gender_spinner"
         android:prompt="@string/sex_title"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
