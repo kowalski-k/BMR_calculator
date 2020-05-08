@@ -60,9 +60,9 @@ class MainActivity : AppCompatActivity() {
             }
         }
 
-        ArrayAdapter.createFromResource(this, R.array.activity_array, android.R.layout.simple_spinner_item)
-            .also { adapter -> adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
-                activitySpinner.adapter = adapter}
+        ArrayAdapter.createFromResource(this, R.array.activity_array, R.layout.multiline_item)
+            .also { adapter -> adapter.setDropDownViewResource(R.layout.multiline_item)
+                activitySpinner.adapter = adapter }
 
         activitySpinner.onItemSelectedListener = object : OnItemSelectedListener{
 
@@ -88,6 +88,9 @@ class MainActivity : AppCompatActivity() {
             return BMR
         }
         fun calculateCPM(): Int {
+            if(option_activity == "BMR"){
+                CPM = (BMR * 1.0).toInt()
+            }
             if(option_activity == "Sedetary: no exercise"){
                 CPM = (BMR * 1.2).toInt()
             }
@@ -110,9 +113,20 @@ class MainActivity : AppCompatActivity() {
         }
 
         fun result() {
-            calculateBMR()
-            calculateCPM()
-            Toast.makeText(this, String.format(getResources().getString(R.string.resultCMP), CPM), Toast.LENGTH_LONG).show()
+            if(weightEditTextView.text.toString().isNullOrEmpty() or heightEditText.text.toString().isNullOrEmpty() or ageEditText.text.toString().isNullOrEmpty() )
+                Toast.makeText(this, String.format(getResources().getString(R.string.emptyString)), Toast.LENGTH_LONG).show()
+            else{
+                calculateBMR()
+                calculateCPM()
+                if(option_activity == "BMR"){
+                    Toast.makeText(this, String.format(getResources().getString(R.string.resultBMR), BMR), Toast.LENGTH_LONG).show()
+                }
+                else {
+                    Toast.makeText(this, String.format(getResources().getString(R.string.resultCMP), CPM), Toast.LENGTH_LONG).show()
+                }
+
+            }
+
         }
         calculateButton.setOnClickListener { result() }
         }

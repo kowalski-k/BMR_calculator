@@ -1,14 +1,16 @@
 <resources>
     <string name="app_name">CalorieCalculator</string>
-    <string name="sex_title">Gender:</string>
+    <string name="gender_title">Gender:</string>
     <string name="activity_title">Activity:</string>
-    <string name="resultBMR">Your BMR is: </string>
+    <string name="resultBMR">Your BMR is: %.0f kcal</string>
     <string name="resultCMP">Your CMP is: %d kcal</string>
+    <string name="emptyString">You did not enter your data!</string>
     <string-array name="gender_array">
         <item>Male</item>
         <item>Female</item>
     </string-array>
     <string-array name="activity_array">
+        <item>BMR</item>
         <item>Sedetary: no exercise</item>
         <item>Light: exercise 2-3 times/week</item>
         <item>Moderate: exercise 4-5 times/week</item>
